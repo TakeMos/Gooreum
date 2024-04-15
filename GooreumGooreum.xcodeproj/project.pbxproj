@@ -13,6 +13,8 @@
 		382C37352BCCC5A900C14D2F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 382C37342BCCC5A900C14D2F /* Preview Assets.xcassets */; };
 		382C37372BCCC5A900C14D2F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382C37362BCCC5A900C14D2F /* Persistence.swift */; };
 		382C373A2BCCC5A900C14D2F /* GooreumGooreum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 382C37382BCCC5A900C14D2F /* GooreumGooreum.xcdatamodeld */; };
+		382C37432BCD7C1400C14D2F /* Datas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382C37422BCD7C1400C14D2F /* Datas.swift */; };
+		382C37492BCD86C600C14D2F /* DatePickData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382C37482BCD86C600C14D2F /* DatePickData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		382C37342BCCC5A900C14D2F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		382C37362BCCC5A900C14D2F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		382C37392BCCC5A900C14D2F /* GooreumGooreum.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GooreumGooreum.xcdatamodel; sourceTree = "<group>"; };
+		382C37422BCD7C1400C14D2F /* Datas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datas.swift; sourceTree = "<group>"; };
+		382C37482BCD86C600C14D2F /* DatePickData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +59,9 @@
 		382C372C2BCCC5A800C14D2F /* GooreumGooreum */ = {
 			isa = PBXGroup;
 			children = (
+				382C37412BCCD25300C14D2F /* Model */,
+				382C37402BCCD24300C14D2F /* View */,
 				382C372D2BCCC5A800C14D2F /* GooreumGooreumApp.swift */,
-				382C372F2BCCC5A800C14D2F /* ContentView.swift */,
 				382C37312BCCC5A900C14D2F /* Assets.xcassets */,
 				382C37362BCCC5A900C14D2F /* Persistence.swift */,
 				382C37382BCCC5A900C14D2F /* GooreumGooreum.xcdatamodeld */,
@@ -71,6 +76,23 @@
 				382C37342BCCC5A900C14D2F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		382C37402BCCD24300C14D2F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				382C372F2BCCC5A800C14D2F /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		382C37412BCCD25300C14D2F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				382C37422BCD7C1400C14D2F /* Datas.swift */,
+				382C37482BCD86C600C14D2F /* DatePickData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,8 +165,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				382C37492BCD86C600C14D2F /* DatePickData.swift in Sources */,
 				382C37372BCCC5A900C14D2F /* Persistence.swift in Sources */,
 				382C37302BCCC5A800C14D2F /* ContentView.swift in Sources */,
+				382C37432BCD7C1400C14D2F /* Datas.swift in Sources */,
 				382C372E2BCCC5A800C14D2F /* GooreumGooreumApp.swift in Sources */,
 				382C373A2BCCC5A900C14D2F /* GooreumGooreum.xcdatamodeld in Sources */,
 			);
