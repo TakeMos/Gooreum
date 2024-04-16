@@ -9,20 +9,25 @@ import Foundation
 import Combine
 
 class DatePickData: ObservableObject {
-    var date = Date()
     
-    var yearFormatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy"
-        
-        return formatter
+    func displayMonth(_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.setLocalizedDateFormatFromTemplate("M")
+        return dateFormatter.string(from: date)
     }
-    var monthFormatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "M"
-        
-        return formatter
+    
+    func displayYear(_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.setLocalizedDateFormatFromTemplate("YYYY")
+        return dateFormatter.string(from: date)
     }
-    //var currentDate: Date = Date()
+    func displayDay(_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.setLocalizedDateFormatFromTemplate("E")
+        return dateFormatter.string(from: date)
+    }
+//    func changeStart() {
+//        startDate = Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: selectedDate))!
+//    }
     
 }
