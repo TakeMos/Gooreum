@@ -9,6 +9,7 @@ import Foundation
 import Combine
 
 class DatePickData: ObservableObject {
+    var date = Date()
     
     var yearFormatter: DateFormatter {
         let formatter = DateFormatter()
