@@ -9,19 +9,13 @@ import SwiftUI
 
 struct preView: View {
     var body: some View {
-        VStack {
-            Spacer()
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                Text("들어가기")
-                    .frame(width:100, height:50)
-                    .foregroundStyle(.black)
-            })
-            .background(.white)
+            VStack {
+                Spacer()
+
+            }
+            .frame(width: 360, height:450)
+            .background(.choiceblue)
             .clipShape(RoundedRectangle(cornerRadius: 10))
-            .padding()
-        }
-        .frame(width: 500, height:500)
-        .background(.choiceblue)
     }
 }
 

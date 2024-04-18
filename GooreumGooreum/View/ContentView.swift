@@ -14,82 +14,102 @@ struct ContentView: View {
     
     @State private var selectedDate = Date()
     @State private var showView: Bool = false
+    @State private var btnColor: [Color] = [.dayblue, .choiceblue]
+    
     var body: some View {
         
         let startDate = Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: selectedDate))!
-        
-        VStack {
-            Text(datePick.displayYear(selectedDate))
-                .font(.caption)
-                .padding(5)
-            HStack {
-                Button(action: {
-                   changeMonth(-1)
-                }, label: {
-                    Image(systemName: "arrowtriangle.left.fill")
-                        .resizable()
-                        .frame(width: 25, height: 25)
-                        .foregroundStyle(.arrow)
-                })
-                Text(datePick.displayMonth(selectedDate) + "월")
-                    .font(.largeTitle)
-                Button(action: {
-                    changeMonth(1)
-                }, label: {
-                    Image(systemName: "arrowtriangle.right.fill")
-                        .resizable()
-                        .frame(width: 25, height: 25)
-                        .foregroundStyle(.arrow)
-                })
-            }
-            ScrollView(.horizontal, showsIndicators: false) {
-//                HStack {
-//                    ForEach(0..<dates.count) { index in
-//                        VStack {
-//                            Text("\(Calendar.current.component(.day, from: dates[index]))")
-//                                .frame(width:40, height: 40)
-//                        }
-//                    }
-//                }
-                
-                //NC1 끝나고 한번 더 공부해보기.
-                HStack() {
-                    let components = (
-                        0..<Calendar.current.range(of: .day, in: .month, for: startDate)!.count)
-                        .map {
-                            Calendar.current.date(byAdding: .day, value: $0, to: startDate)!
-                        }
-                    var flag = 0
+        NavigationView {
+            VStack {
+                Text(datePick.displayYear(selectedDate))
+                    .font(.caption)
+                    .padding(5)
+                HStack {
+                    Button(action: {
+                        changeMonth(-1)
+                    }, label: {
+                        Image(systemName: "arrowtriangle.left.fill")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                            .foregroundStyle(.arrow)
+                    })
+                    Text(datePick.displayMonth(selectedDate) + "월")
+                        .font(.largeTitle)
+                    Button(action: {
+                        changeMonth(1)
+                    }, label: {
+                        Image(systemName: "arrowtriangle.right.fill")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                            .foregroundStyle(.arrow)
+                    })
+                }
+                ScrollView(.horizontal, showsIndicators: false) {
+                    //                HStack {
+                    //                    ForEach(0..<dates.count) { index in
+                    //                        VStack {
+                    //                            Text("\(Calendar.current.component(.day, from: dates[index]))")
+                    //                                .frame(width:40, height: 40)
+                    //                        }
+                    //                    }
+                    //                }
                     
-                    ForEach(components, id: \.self) { date in
-                        VStack {
-                            Text("\(Calendar.current.component(.day, from: date))")
-                                .frame(width: 45, height: 45)
-                                .background(Calendar.current.isDate(selectedDate, equalTo: date, toGranularity: .day) ? Color.choiceblue : Color.dayblue)
-                                .foregroundStyle(.white)
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
-                            
-                            Text(datePick.displayDay(date))
-                                .font(.caption)
-                                .foregroundStyle(datePick.displayDay(date) == "Sun" ? Color.red : Color.black)
-                        }
-                        .onTapGesture {
-                            selectedDate = date
-                            showView = true
+                    //NC1 끝나고 한번 더 공부해보기.
+                    HStack() {
+                        let components = (
+                            0..<Calendar.current.range(of: .day, in: .month, for: startDate)!.count)
+                            .map {
+                                Calendar.current.date(byAdding: .day, value: $0, to: startDate)!
+                            }
+                        
+                        ForEach(components, id: \.self) { date in
+                            VStack {
+                                Text("\(Calendar.current.component(.day, from: date))")
+                                    .frame(width: 45, height: 45)
+                                    .background(Calendar.current.isDate(selectedDate, equalTo: date, toGranularity: .day) && showView ? Color.choiceblue : Color.dayblue)
+                                    .foregroundStyle(.white)
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                                
+                                Text(datePick.displayDay(date))
+                                    .font(.caption)
+                                    .foregroundStyle(datePick.displayDay(date) == "일" ? Color.red : Color.black)
+                            }
+                            .onTapGesture {
+                                if !showView {
+                                    selectedDate = date
+                                    showView = true
+                                } else {
+                                    showView = false
+                                }
+                            }
                         }
                     }
                 }
+                .frame(maxWidth: .infinity)
+                .padding(15)
+                Spacer()
+                //프리뷰
+                ZStack {
+                    if showView == true {
+                        VStack {
+                            preView()
+                            NavigationLink {
+                                SkyView()
+                            } label: {
+                                Text("들어가기")
+                                    .frame(width:100, height: 50)
+                                    .foregroundStyle(.black)
+                                    .background(.white)
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                                    .padding()
+                            }
+                        }
+
+                    }
+                }
             }
-            .sheet(isPresented: $showView, content: {
-                preView()
-                    .presentationDetents([
-                        .fraction(0.7)
-                    ])
-            })
-            .frame(maxWidth: .infinity)
-            .padding(15)
-            Spacer()
         }
+        .navigationBarBackButtonHidden(true)
     }
     
     func changeMonth( _ value: Int) {

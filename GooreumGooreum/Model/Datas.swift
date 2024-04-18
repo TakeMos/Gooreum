@@ -9,5 +9,10 @@ import Foundation
 import Combine
 
 class Datas: ObservableObject {
+    @Published var check: Int = 0
     
+    func changeCheck() -> Int {
+        check = 2
+        return check
+    }
 }

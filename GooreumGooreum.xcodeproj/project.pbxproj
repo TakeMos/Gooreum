@@ -16,6 +16,9 @@
 		382C37432BCD7C1400C14D2F /* Datas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382C37422BCD7C1400C14D2F /* Datas.swift */; };
 		382C37492BCD86C600C14D2F /* DatePickData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382C37482BCD86C600C14D2F /* DatePickData.swift */; };
 		3832AC372BCEF02700B8071B /* preView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3832AC362BCEF02700B8071B /* preView.swift */; };
+		3832AC3D2BCF540900B8071B /* SkyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3832AC3C2BCF540900B8071B /* SkyView.swift */; };
+		3832AC402BCF6B8900B8071B /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3832AC3F2BCF6B8900B8071B /* Cloud.swift */; };
+		38E34F452BD0A5EB00D54830 /* CloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E34F442BD0A5EB00D54830 /* CloudView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		382C37422BCD7C1400C14D2F /* Datas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datas.swift; sourceTree = "<group>"; };
 		382C37482BCD86C600C14D2F /* DatePickData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickData.swift; sourceTree = "<group>"; };
 		3832AC362BCEF02700B8071B /* preView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = preView.swift; sourceTree = "<group>"; };
+		3832AC3C2BCF540900B8071B /* SkyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyView.swift; sourceTree = "<group>"; };
+		3832AC3F2BCF6B8900B8071B /* Cloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
+		38E34F442BD0A5EB00D54830 /* CloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,7 @@
 		382C372C2BCCC5A800C14D2F /* GooreumGooreum */ = {
 			isa = PBXGroup;
 			children = (
+				3832AC3E2BCF6B6E00B8071B /* Classes */,
 				382C37412BCCD25300C14D2F /* Model */,
 				382C37402BCCD24300C14D2F /* View */,
 				382C372D2BCCC5A800C14D2F /* GooreumGooreumApp.swift */,
@@ -85,6 +92,8 @@
 			children = (
 				382C372F2BCCC5A800C14D2F /* ContentView.swift */,
 				3832AC362BCEF02700B8071B /* preView.swift */,
+				3832AC3C2BCF540900B8071B /* SkyView.swift */,
+				38E34F442BD0A5EB00D54830 /* CloudView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -96,6 +105,14 @@
 				382C37482BCD86C600C14D2F /* DatePickData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3832AC3E2BCF6B6E00B8071B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3832AC3F2BCF6B8900B8071B /* Cloud.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,11 +186,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				382C37492BCD86C600C14D2F /* DatePickData.swift in Sources */,
+				3832AC402BCF6B8900B8071B /* Cloud.swift in Sources */,
 				382C37372BCCC5A900C14D2F /* Persistence.swift in Sources */,
 				382C37302BCCC5A800C14D2F /* ContentView.swift in Sources */,
 				382C37432BCD7C1400C14D2F /* Datas.swift in Sources */,
 				3832AC372BCEF02700B8071B /* preView.swift in Sources */,
+				3832AC3D2BCF540900B8071B /* SkyView.swift in Sources */,
 				382C372E2BCCC5A800C14D2F /* GooreumGooreumApp.swift in Sources */,
+				38E34F452BD0A5EB00D54830 /* CloudView.swift in Sources */,
 				382C373A2BCCC5A900C14D2F /* GooreumGooreum.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

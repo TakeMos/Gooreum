@@ -23,6 +23,7 @@ class DatePickData: ObservableObject {
     }
     func displayDay(_ date: Date) -> String {
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
         dateFormatter.setLocalizedDateFormatFromTemplate("E")
         return dateFormatter.string(from: date)
     }
